@@ -1,0 +1,242 @@
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Times New Roman', Times, serif;
+  line-height: 1.6;
+  color: #ffffff;
+  min-height: 100vh;
+  /* garante que cubra toda a tela */
+
+  /* Degradê de três cores */
+  background: linear-gradient(to bottom,
+      #117774,
+      /* verde ácido escuro no topo */
+      #084f64,
+      /* azul esverdeado médio no meio */
+      #0b1a3b
+      /* azul marinho no final */
+    );
+}
+
+/* Barra superior integrada ao fundo */
+.barra-topo {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  box-shadow: none;
+  background-color: #178d89;
+  /* remove sombra para integrar melhor */
+}
+
+.barra-topo .titulo h1 {
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 600;
+  margin-right: 75px;
+  color: #ffffff;
+
+}
+
+.barra-topo .titulo span {
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Botões */
+.botoes-topo {
+  display: flex;
+  gap: 15px;
+  margin-right: 80px;
+  text-shadow: 2px 2px 5px rgb(17, 46, 66);
+}
+
+.botao {
+  border: 1px solid #19eeee;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+text-shadow: 2px 2px 5px rgb(17, 46, 66);
+}
+
+.botao:hover {
+  background-color: #1eaca7;
+  color: #fff;
+}
+
+.titulo-principal {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.titulo-principal h1 {
+  color: #ffffff;
+  font-size: 2rem;
+  text-shadow: 2px 2px 5px rgb(17, 46, 66);
+  margin: 0;
+}
+
+
+
+
+/* Sessão de informações */
+.info-baleia {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+
+  align-items: center;
+}
+
+.info-baleia .imagem img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  box-shadow: 0 6px 20px rgb(16, 40, 58);
+
+}
+
+.info-baleia .texto h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 4px 4px 5px rgb(17, 46, 66);
+}
+
+.info-baleia .texto p {
+  font-size: 1rem;
+}
+
+/* Sessão invertida (imagem na direita) */
+.invertido {
+  direction: rtl;
+}
+
+.invertido .imagem,
+.invertido .texto {
+  direction: ltr;
+}
+
+/*tabela*/
+.tabela {
+  display: flex;
+  flex-direction: column;
+  /* coloca o título em cima da imagem */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 20px;
+
+}
+
+.tabela h2 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 24px;
+  text-shadow: 4px 4px 4px rgb(17, 46, 66);
+  padding-top: 10px;
+  border-top: 2px solid rgb(15, 61, 94);
+  /* 🌊 linha acima */
+  width: 100%;
+  /* faz a linha ter um tamanho equilibrado */
+}
+
+
+.tabela img {
+  max-width: 100%;
+  /* faz a imagem se ajustar ao tamanho da tela */
+  height: auto;
+  /* mantém a proporção */
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgb(17, 46, 66);
+}
+
+
+/* Rodapé */
+.rodape {
+  width: 100%;
+  background-color: #001f3f;
+  /* azul escuro, combinando com o fundo das imagens */
+  color: #ffffff;
+  text-align: center;
+  padding: 25px 10px;
+  font-size: 1rem;
+  line-height: 1.6;
+  box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.3);
+  /* leve destaque interno */
+  margin-top: 0;
+  /* sem espaço extra acima */
+}
+
+.rodape p {
+  margin: 5px 0;
+}
+
+
+/* RESPONSIVIDADE */
+@media (max-width: 800px) {
+
+  /* Barra topo já ajustada */
+  .barra-topo {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+    padding: 15px 20px;
+  }
+
+  .barra-topo .titulo h1 {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .botoes-topo {
+    margin: 0;
+    gap: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .botao {
+    padding: 8px 12px;
+    font-size: 0.9rem;
+  }
+
+  /* Seções de informação empilhadas verticalmente */
+  .info-baleia,
+  .invertido {
+    grid-template-columns: 1fr; /* 1 coluna só */
+    text-align: center;
+    gap: 20px; /* espaço entre imagem e texto */
+    padding: 15px;
+  }
+
+  /* Para a seção invertida, garantimos a direção normal */
+  .invertido {
+    direction: ltr;
+  }
+
+  .invertido .imagem,
+  .invertido .texto {
+    direction: ltr;
+  }
+
+  /* Ajuste das imagens */
+  .info-baleia .imagem img,
+  .invertido .imagem img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+  }
+}

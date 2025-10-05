@@ -1,0 +1,125 @@
+/* Reset simples */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; font-family: 'Segoe UI', Roboto, Arial, sans-serif; }
+
+/* HERO com imagem de fundo "capa" */
+/* Ajuste a extensão se necessário: capa.jpg | capa.png | capa.jpeg */
+.hero{
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-image: url('./capa.jpeg');
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  text-align: center;
+  padding: 3rem 1.5rem;
+}
+
+/* leve camada escura para melhorar legibilidade do texto */
+.hero .overlay{
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(4,25,28,0.6) 0%, rgba(2,12,16,0.75) 100%);
+  z-index: 0;
+}
+
+/* Conteúdo central (sobrepondo o overlay) */
+.content{
+  position: relative;
+  z-index: 1;
+  max-width: 980px;
+  width: 100%;
+  padding: 2rem;
+}
+
+.icons {
+  margin: 1.5rem 0;
+  font-size: 1.8rem;
+  color: #aefcf3;
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.btn {
+  background: rgba(16, 200, 180, 0.25);
+  border: 1px solid rgba(16,200,180,0.65);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+
+/* Título grande e legível */
+.title{
+  font-size: clamp(1.6rem, 3.8vw, 3.2rem); /* responsivo */
+  line-height: 1.05;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 0 4px 18px rgba(0,0,0,0.5);
+  margin-bottom: 0.6rem;
+}
+
+
+
+/* grupo de botões */
+.cta-group{
+  display: inline-flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* estilo básico do botão (links estilizados) */
+.btn{
+  display: inline-block;
+  min-width: 220px;
+  padding: 0.9rem 1.2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  transition: transform .15s ease, box-shadow .15s ease, background-color .15s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+  background: rgba(16, 200, 180, 0.13); /* leve tom turquesa */
+  color: #e7fffb;
+  border: 1px solid rgba(16,200,180,0.55);
+}
+
+
+
+/* hover / focus */
+.btn:hover,
+.btn:focus{
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(2,20,22,0.6);
+  outline: none;
+}
+
+/* foco acessível (keyboard) */
+.btn:focus-visible{
+  outline: 3px solid rgba(16,200,180,0.45);
+  outline-offset: 3px;
+}
+
+/* responsividade: empilha botões em telas pequenas */
+@media (max-width:480px){
+  .btn { min-width: 100%; padding: 0.85rem; font-size: 0.98rem; }
+  .cta-group { gap: 0.6rem; width: 100%; }
+  .content { padding: 1rem; }
+}
+
+/* canto decorativo opcional */
+.corner-decor{
+  position: absolute;
+  right: 18px;
+  bottom: 18px;
+  width: 36px;
+  height: 36px;
+  border-radius: 6px;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  transform: rotate(45deg);
+  z-index: 1;
+  opacity: 0.9;
+}

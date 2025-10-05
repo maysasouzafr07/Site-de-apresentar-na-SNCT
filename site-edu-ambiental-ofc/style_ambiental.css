@@ -1,0 +1,183 @@
+/* ====== Fundo geral ====== */
+body {
+  margin: 0;
+  font-family: 'Times New Roman', Times, serif;
+  background: linear-gradient(to bottom, #1db9b4, #0b1a3b);
+  color: #fff;
+  line-height: 1.6;
+  overflow-x: hidden;
+  box-sizing: border-box;
+}
+
+/* ====== Barra superior ====== */
+.barra-topo {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 40px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  /* agora a barra rola junto com o conteúdo */
+}
+
+.barra-topo .titulo h1 {
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 600;
+  margin-right: 75px;
+}
+
+.barra-topo .titulo span {
+  font-weight: 400;
+  font-style: italic;
+}
+
+/* Botões */
+.botoes-topo {
+  display: flex;
+  gap: 15px;
+  margin-right: 80px;
+}
+
+.botao {
+  background-color: rgba(0, 255, 255, 0.15);
+  border: 1px solid #00e6e6;
+  color: #fff;
+  padding: 8px 15px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.botao:hover {
+  background-color: rgba(7, 87, 87, 0.15);  
+}
+
+/* ====== Conteúdo geral ====== */
+.conteudo {
+  max-width: 1200px;
+  margin: 0 auto; /* centraliza horizontalmente */
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  box-sizing: border-box;
+}
+
+/* Texto introdutório */
+.introducao p {
+  text-align: justify;
+  font-size: 1.15rem;
+  line-height: 1.8;
+  margin: 0 auto;
+  max-width: 900px;
+}
+
+/* Seções */
+.meio,
+.final {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* Blocos de texto */
+.bloco {
+  flex: 1;
+  min-width: 300px;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.bloco h2 {
+  color: #7df9ff;
+  margin-bottom: 15px;
+}
+
+/* Imagens */
+.meio img,
+.final img {
+  flex: 1;
+  max-width: 350px;
+  border-radius: 50%;
+  border: 3px solid #00e6e6;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.3);
+}
+
+/* ====== Rodapé ====== */
+.rodape {
+  width: 100%; /* ocupa toda a largura da tela */
+  background-color: rgba(0, 0, 0, 0.5); /* fundo semi-transparente */
+  color: #fff;
+  text-align: center; /* centraliza o texto */
+  padding: 20px 0; /* padding vertical */
+  font-size: 0.9rem;
+  line-height: 1.5;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+  position: relative; /* garante que fique no fluxo normal da página */
+  margin-top: 40px;
+}
+.rodape p {
+  margin: 5px 0;
+}
+
+
+
+/* ======== RESPONSIVO ======== */
+@media (max-width: 900px) {
+  /* Barra do topo */
+  .barra-topo {
+    flex-direction: column;
+    text-align: left;
+    gap: 10px;
+    padding: 15px 20px;
+  }
+
+  .barra-topo .titulo h1 {
+    font-size: 1rem;
+    margin: 0;
+  }
+
+  .botoes-topo {
+    margin-right: 0;
+    gap: 10px;
+    align-self: flex-start;
+  }
+
+  /* Conteúdo principal */
+  .conteudo {
+    padding: 30px 15px;
+    flex-direction: column;
+  }
+
+  /* Seções empilhadas: texto em cima, imagem embaixo */
+  .meio,
+  .final {
+    flex-direction: column;   /* muda de row para column */
+    align-items: center;
+    text-align: center;
+    gap: 20px;               /* espaço entre texto e imagem */
+  }
+
+  /* Blocos e imagens */
+  .meio .bloco,
+  .final .bloco {
+    width: 100%;              /* ocupa 100% da largura disponível */
+    order: 1;                 /* texto primeiro */
+  }
+
+  .meio img,
+  .final img {
+    width: 100%;              /* imagem ocupa largura total */
+    max-width: 300px;         /* limita tamanho máximo */
+    order: 2;                 /* imagem depois do texto */
+    margin-top: 15px;
+  }
+}
+
+
